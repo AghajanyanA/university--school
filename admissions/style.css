@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+* {
+    /* user-select: none; */
+    font-family: 'Roboto Slab', serif;
+    
+}
+
+*::selection {
+    background-color: rgb(182, 182, 182);
+    border-radius: 20px;
+}
+
+body {
+    margin: 0;
+}
+.header {
+    background-color: white;
+    background-image: url("https://i.ibb.co/GVtBfqL/campanile-clock-tower-berkeley-Ekw-FCde-max-2880x1800-1-1024x683.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.navbar {
+    background-color: rgb(13, 26, 83);
+    padding: 22px;
+    position: sticky;
+    top: 0px;
+    display: flex;
+    transition: padding-left 1s ease-out;
+}
+.navTop {
+    padding: 0 0 0 22px;
+    padding-left: 30%;
+    transition: padding-left 1s ease-out;
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+.navbar a:hover {
+    background: rgb(56, 56, 150);
+}
+
+.mainLinks {
+    align-self: center;
+}
+
+.mainLinks > a {
+    padding: 20px;
+}
+
+.navHomeButton {
+    display: none;
+    padding: 20px;
+}
+
+.navHomeButtonOn {
+    display: inline;
+}
+
+.logo {
+    margin-left: 3%;
+    width: fit-content;
+}
+.main {
+    margin: 25px 0 0 0;
+    position: static;
+    display: flex;
+    justify-content: center;
+}
+
+.lpanel {
+    width: 10%;
+}
+
+.cpanel {
+    width: 70%;
+}
+
+.rpanel {
+    background: red;
+    width: 10%;
+    margin-bottom: 6vh;
+}
