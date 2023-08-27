@@ -4,6 +4,7 @@ const mainLinks = document.querySelector('.mainLinks');
 const pagesContainer = document.querySelector('.pagesContainer');
 const slideButtons = document.querySelector('.slideButtons');
 const slidesWrapper = document.querySelector('.slidesInWrapper');
+const lpanel = document.querySelector('.lpanelroot')
 
 window.addEventListener('scroll', function() { // navbar sliding animation logic
   const rect = navbar.getBoundingClientRect();
@@ -66,13 +67,13 @@ function updateSlidePosition() {
   Array.from(slidesWrapper.children).map(el => el.style.transform = `translateX(${translateXValue}%)`);
 }
 
-// setInterval(() => {
-//   if (pagesContainer.children.length - 1 === page.value) {
-//     page.value = 0;
-//   } else {
-//     page.value += 1;
-//   }
-// }, 10000)
+setInterval(() => {
+  if (pagesContainer.children.length - 1 === page.value) {
+    page.value = 0;
+  } else {
+    page.value += 1;
+  }
+}, 10000)
 
 
 
@@ -93,4 +94,64 @@ slidesWrapper.addEventListener('click', e => {
     default:
       break;
   }
+})
+
+//////////////////////////////////// FOLLOWING IS A HARCODED MOCK DATA ///////////////////////////////////
+
+const _leftPanelData = [
+  {
+    id: 0,
+    headline: 'University response to the invasion of Ukraine',
+    subHeadline: 'Information, advice and support for staff and students impacted',
+    image: 'https://www.ox.ac.uk/sites/files/oxford/styles/ow_small_highlight/s3/disc_ukraine_flag.jpg?itok=HLfoxG7t'
+  },
+  {
+    id: 1,
+    headline: 'The OUP Blog',
+    subHeadline: 'Communicative luck reduction: machine-like or social (or both)?',
+    image: 'https://www.ox.ac.uk/sites/files/oxford/styles/ow_small_highlight/s3/disc_oup_chat_gpt.jpg?itok=TXp-m4md'
+  },
+  {
+    id: 2,
+    headline: 'Featured podcast',
+    subHeadline: 'Futuremakers: Childhood and adolescent anxiety',
+    image: 'https://podcasts.ox.ac.uk/sites/default/files/image-mirror/futuremakers_1.jpg'
+  },
+  {
+    id: 3,
+    headline: 'Article headline',
+    subHeadline: 'Text-description',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Eminem_-_Concert_for_Valor_in_Washington%2C_D.C._Nov._11%2C_2014_%282%29_%28Cropped%29.jpg/800px-Eminem_-_Concert_for_Valor_in_Washington%2C_D.C._Nov._11%2C_2014_%282%29_%28Cropped%29.jpg'
+  }
+]
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+_leftPanelData.map(item => {
+  const discoverBox = document.createElement('div')
+  discoverBox.classList.add('lpanel-boxitem')
+
+  const image = document.createElement('img')
+  image.classList.add('lpanel-boxitem-image')
+  image.src = item.image
+
+  const header = document.createElement('span')
+  header.classList.add('lpanel-boxitem-header')
+  header.innerHTML = item.headline
+
+  const text = document.createElement('p')
+  text.classList.add('lpanel-boxitem-text')
+  text.innerHTML = item.subHeadline
+
+  const headerWrapper = document.createElement('div')
+  headerWrapper.classList.add('lpanel-boxitem-headerWrapper')
+
+
+  headerWrapper.append(image)
+  headerWrapper.append(header)
+
+  discoverBox.append(headerWrapper)
+  discoverBox.append(text)
+  lpanel.append(discoverBox)
 })
