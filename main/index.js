@@ -3,7 +3,7 @@ const homeButton = document.querySelector('.navHomeButton');
 const mainLinks = document.querySelector('.mainLinks');
 const pagesContainer = document.querySelector('.pagesContainer');
 const slideButtons = document.querySelector('.slideButtons');
-const slidesWrapper = document.querySelector('.slidesInWrapper')
+const slidesWrapper = document.querySelector('.slidesInWrapper');
 
 window.addEventListener('scroll', function() { // navbar sliding animation logic
   const rect = navbar.getBoundingClientRect();
@@ -18,7 +18,7 @@ window.addEventListener('scroll', function() { // navbar sliding animation logic
 });
 
 window.onload = function() {
-  pagesContainer.childNodes[1].classList.add('active')
+  pagesContainer.childNodes[1].classList.add('active');
 };
 
 
@@ -34,14 +34,14 @@ const page = {
     pagesContainer.children[page.value].classList.remove('active');
     this._currentPage = newPage;
     pagesContainer.children[page.value].classList.add('active');
-    updateSlidePosition()
+    updateSlidePosition();
   },
 };
 
-pagesContainer.addEventListener('click', (e) => {
+pagesContainer.addEventListener('click', e => {
   if (!e.target.classList.contains('pagesContainer')) {
     const childrenIndex = Array.from(pagesContainer.children).indexOf(e.target);
-    page.value = childrenIndex
+    page.value = childrenIndex;
   }
 });
 
@@ -51,13 +51,13 @@ slideButtons.addEventListener('click', e => {
       page.value = pagesContainer.children.length - 1
     } else {
       page.value -= 1;
-    }
+    };
   } else if (e.target.parentElement.id === 'right') {
     if (pagesContainer.children.length - 1 === page.value) {
       page.value = 0
     } else {
       page.value += 1;
-    }
+    };
   };
 });
 
@@ -66,10 +66,31 @@ function updateSlidePosition() {
   Array.from(slidesWrapper.children).map(el => el.style.transform = `translateX(${translateXValue}%)`);
 }
 
-setInterval(() => {
-  if (pagesContainer.children.length - 1 === page.value) {
-    page.value = 0
-  } else {
-    page.value += 1;
+// setInterval(() => {
+//   if (pagesContainer.children.length - 1 === page.value) {
+//     page.value = 0;
+//   } else {
+//     page.value += 1;
+//   }
+// }, 10000)
+
+
+
+slidesWrapper.addEventListener('click', e => {
+  switch (e.target.closest('.slide').id) {
+    case 'slide1':
+      console.log('Redirect slide one');
+      break;
+    case 'slide2':
+      console.log('Redirect slide two');
+      break;
+    case 'slide3':
+      console.log('Redirect slide three');
+      break;
+    case 'slide4':
+      console.log('Redirect slide four');
+      break;
+    default:
+      break;
   }
-}, 10000)
+})
