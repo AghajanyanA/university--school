@@ -73,7 +73,7 @@ setInterval(() => {
   } else {
     page.value += 1;
   }
-}, 10000)
+}, 8000)
 
 
 

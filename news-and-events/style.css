@@ -24,7 +24,7 @@ body {
 }
 .navbar {
     background-color: rgb(13, 26, 83);
-    padding: 22px;
+    padding: 22px 22px 22px 3%;
     position: sticky;
     top: 0px;
     display: flex;
