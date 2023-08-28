@@ -5,6 +5,8 @@ const pagesContainer = document.querySelector('.pagesContainer');
 const slideButtons = document.querySelector('.slideButtons');
 const slidesWrapper = document.querySelector('.slidesInWrapper');
 const lpanel = document.querySelector('.lpanelroot')
+const rpanel = document.querySelector('.rpanelroot')
+
 
 window.addEventListener('scroll', function() { // navbar sliding animation logic
   const rect = navbar.getBoundingClientRect();
@@ -23,7 +25,7 @@ window.onload = function() {
 };
 
 
-const page = {
+const currentSlidePage = {
 
   _currentPage: 0,
 
@@ -32,9 +34,9 @@ const page = {
   },
 
   set value(newPage) {
-    pagesContainer.children[page.value].classList.remove('active');
+    pagesContainer.children[currentSlidePage.value].classList.remove('active');
     this._currentPage = newPage;
-    pagesContainer.children[page.value].classList.add('active');
+    pagesContainer.children[currentSlidePage.value].classList.add('active');
     updateSlidePosition();
   },
 };
@@ -42,38 +44,38 @@ const page = {
 pagesContainer.addEventListener('click', e => {
   if (!e.target.classList.contains('pagesContainer')) {
     const childrenIndex = Array.from(pagesContainer.children).indexOf(e.target);
-    page.value = childrenIndex;
+    currentSlidePage.value = childrenIndex;
   }
 });
 
 slideButtons.addEventListener('click', e => {
   if (e.target.parentElement.id === 'left') {
-    if (page.value === 0) {
-      page.value = pagesContainer.children.length - 1
+    if (currentSlidePage.value === 0) {
+      currentSlidePage.value = pagesContainer.children.length - 1
     } else {
-      page.value -= 1;
+      currentSlidePage.value -= 1;
     };
   } else if (e.target.parentElement.id === 'right') {
-    if (pagesContainer.children.length - 1 === page.value) {
-      page.value = 0
+    if (pagesContainer.children.length - 1 === currentSlidePage.value) {
+      currentSlidePage.value = 0
     } else {
-      page.value += 1;
+      currentSlidePage.value += 1;
     };
   };
 });
 
 function updateSlidePosition() {
-  const translateXValue = -page.value * 100;
+  const translateXValue = -currentSlidePage.value * 100;
   Array.from(slidesWrapper.children).map(el => el.style.transform = `translateX(${translateXValue}%)`);
 }
 
 setInterval(() => {
-  if (pagesContainer.children.length - 1 === page.value) {
-    page.value = 0;
+  if (pagesContainer.children.length - 1 === currentSlidePage.value) {
+    currentSlidePage.value = 0;
   } else {
-    page.value += 1;
+    currentSlidePage.value += 1;
   }
-}, 8000)
+}, 8000);
 
 
 
@@ -123,35 +125,118 @@ const _leftPanelData = [
     subHeadline: 'Text-description',
     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Eminem_-_Concert_for_Valor_in_Washington%2C_D.C._Nov._11%2C_2014_%282%29_%28Cropped%29.jpg/800px-Eminem_-_Concert_for_Valor_in_Washington%2C_D.C._Nov._11%2C_2014_%282%29_%28Cropped%29.jpg'
   }
-]
+];
+
+const _rightPanelData = [
+  {
+    id: 0,
+    headline: 'Ships, Storms and Climate Change',
+    date: new Date('August 19, 2023'),
+  },
+  {
+    id: 1,
+    headline: 'Colour Revolution: Victorian Art, Fashion & Design',
+    date: new Date('August 11, 2023'),
+  },
+  {
+    id: 2,
+    headline: 'The Beatrice Blackwood Lecture 2023: Why Museums?',
+    date: new Date('August 9, 2023'),
+  },
+  {
+    id: 3,
+    headline: 'Cascading Principles - a major mathematically inspired exhibition by Conrad Shawcross',
+    date: new Date('August 8, 2023'),
+  },
+];
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 _leftPanelData.map(item => {
-  const discoverBox = document.createElement('div')
-  discoverBox.classList.add('lpanel-boxitem')
+  const discoverBox = document.createElement('div');
+  discoverBox.classList.add('lpanel-boxitem');
 
-  const image = document.createElement('img')
-  image.classList.add('lpanel-boxitem-image')
-  image.src = item.image
+  const image = document.createElement('img');
+  image.classList.add('lpanel-boxitem-image');
+  image.src = item.image;
 
-  const header = document.createElement('span')
-  header.classList.add('lpanel-boxitem-header')
-  header.innerHTML = item.headline
+  const header = document.createElement('span');
+  header.classList.add('sidepanels-header');
+  header.innerHTML = item.headline;
 
-  const text = document.createElement('p')
-  text.classList.add('lpanel-boxitem-text')
-  text.innerHTML = item.subHeadline
+  const text = document.createElement('p');
+  text.classList.add('lpanel-boxitem-text');
+  text.innerHTML = item.subHeadline;
 
-  const headerWrapper = document.createElement('div')
-  headerWrapper.classList.add('lpanel-boxitem-headerWrapper')
+  const headerWrapper = document.createElement('div');
+  headerWrapper.classList.add('lpanel-boxitem-headerWrapper');
 
 
-  headerWrapper.append(image)
-  headerWrapper.append(header)
+  headerWrapper.append(image);
+  headerWrapper.append(header);
 
-  discoverBox.append(headerWrapper)
-  discoverBox.append(text)
-  lpanel.append(discoverBox)
+  discoverBox.append(headerWrapper);
+  discoverBox.append(text);
+  lpanel.append(discoverBox);
+
+
+  discoverBox.addEventListener('mouseenter', () => {
+    discoverBox.classList.add('color-on')
+  })
+
+  discoverBox.addEventListener('mouseleave', () => {
+    discoverBox.classList.remove('color-on')
+  })
+});
+
+const _datesToMonth = {
+  0: "Jan",
+  1: "Feb",
+  2: "Mar",
+  3: "Apr",
+  4: "May",
+  5: "Jun",
+  6: "Jul",
+  7: "Aug",
+  8: "Sep",
+  9: "Oct",
+  10: "Nov",
+  11: "Dec"
+}
+
+_rightPanelData.map(ev => {
+  const eventBox = document.createElement('div');
+  eventBox.classList.add('rpanel-boxitem');
+
+  const headline = document.createElement('span');
+  headline.classList.add('sidepanels-header');
+  headline.innerHTML = ev.headline;
+
+  const date = document.createElement('span');
+  date.classList.add('rpanel-events-date');
+  const dateWrapper = document.createElement('span')
+  dateWrapper.classList.add('rpanel-dateWrapper')
+  const day = document.createElement('p');
+  day.classList.add('rpanel-event-day');
+  day.innerHTML = ev.date.getDate();
+  const month = document.createElement('p');
+  month.classList.add('rpanel-event-month');
+  const currentMonth = Object.entries(_datesToMonth).find(item => ev.date.getMonth() === +item[0])[1];
+  month.innerHTML = currentMonth
+  dateWrapper.append(day)
+  dateWrapper.append(month)
+  date.append(dateWrapper);
+
+  eventBox.append(date); 
+  eventBox.append(headline);
+  rpanel.append(eventBox);
+
+  eventBox.addEventListener('mouseenter', () => {
+    eventBox.classList.add('color-on')
+  })
+
+  eventBox.addEventListener('mouseleave', () => {
+    eventBox.classList.remove('color-on')
+  })
 })

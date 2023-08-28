@@ -75,8 +75,12 @@ body {
 
 .lpanel {
     width: 10%;
+}
+
+.lpanel-1 {
     padding: 7px 5px;
     background-color: #353c4744;
+    height: fit-content;
 }
 
 .lpheader, .rpheader {
@@ -93,12 +97,17 @@ body {
 
 .cpanel {
     width: 70%;
+    height: fit-content;
 }
 
 .rpanel {
-    background-color: #353c4744;
     width: 10%;
+}
+
+.rpanel-1 {
+    background-color: #353c4744;
     padding: 7px 5px;
+    height: fit-content;
 }
 
 .sliderContainer {
@@ -218,12 +227,13 @@ body {
     display: flex;
 }
 
-.lpanel-boxitem-header {
+.sidepanels-header {
     font-size: 14px;
     font-family: 'Phudu', cursive;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     margin: 0 4px;
+    line-height: 15px;
 }
 
 .lpanel-boxitem-image {
@@ -235,4 +245,38 @@ body {
     font-size: 12px;
     font-family: 'Poppins', sans-serif;
     margin: 0;
+}
+
+.color-on {
+    color: rgb(56, 56, 150);
+}
+
+.rpanel-boxitem {
+    display: flex;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.rpanel-events-date {
+    background: rgb(13, 26, 83);
+    color: white;
+    height: fit-content;
+    margin-right: 5px;
+}
+.rpanel-event-day {
+    margin: 0;
+}
+
+.rpanel-event-month {
+    margin: 0;
+    font-size: 12px;
+}
+
+.rpanel-dateWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 45px;
+    width: 45px;
 }
