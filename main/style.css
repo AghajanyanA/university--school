@@ -74,7 +74,7 @@ body {
 }
 
 .lpanel {
-    width: 10%;
+    width: 13%;
 }
 
 .lpanel-1 {
@@ -101,13 +101,15 @@ body {
 }
 
 .rpanel {
-    width: 10%;
+    width: 13%;
 }
 
 .rpanel-1 {
     background-color: #353c4744;
     padding: 7px 5px;
     height: fit-content;
+    display: flex;
+    flex-direction: column;
 }
 
 .sliderContainer {
@@ -234,7 +236,6 @@ body {
     font-weight: 600;
     margin: 0 4px;
     line-height: 15px;
-    word-break: break-all;
 }
 
 .lpanel-boxitem-image {
@@ -256,6 +257,7 @@ body {
     display: flex;
     margin-bottom: 20px;
     cursor: pointer;
+    overflow: hidden;
 }
 
 .rpanel-events-date {
@@ -280,4 +282,18 @@ body {
     flex-direction: column;
     height: 45px;
     width: 45px;
+}
+
+.rpanel-showmore {
+    display: flex;
+    align-self: flex-end;
+}
+
+.rpanel-showmore > a {
+    text-decoration: none;
+    color: black;
+}
+
+.rpanel-showmore > a:hover {
+    color: rgb(56, 56, 150);
 }
