@@ -127,26 +127,34 @@ const _leftPanelData = [
   }
 ];
 
+
+const individualDateSubstradtion = daysToSubstract => {
+  const _today = new Date()
+  _today.setDate(_today.getDate() - daysToSubstract)
+  return _today
+}
+
+
 const _rightPanelData = [
   {
     id: 0,
     headline: 'Ships, Storms and Climate Change',
-    date: new Date('August 19, 2023'),
+    date: individualDateSubstradtion(2),
   },
   {
     id: 1,
     headline: 'Colour Revolution: Victorian Art, Fashion & Design',
-    date: new Date('August 11, 2023'),
+    date: individualDateSubstradtion(3),
   },
   {
     id: 2,
     headline: 'The Beatrice Blackwood Lecture 2023: Why Museums?',
-    date: new Date('August 9, 2023'),
+    date: individualDateSubstradtion(5),
   },
   {
     id: 3,
     headline: 'Cascading Principles - a major mathematically inspired exhibition by Conrad Shawcross',
-    date: new Date('August 8, 2023'),
+    date: individualDateSubstradtion(7),
   },
 ];
 
@@ -206,6 +214,7 @@ const _datesToMonth = {
 }
 
 _rightPanelData.map(ev => {
+  console.log(ev);
   const eventBox = document.createElement('div');
   eventBox.classList.add('rpanel-boxitem');
 
