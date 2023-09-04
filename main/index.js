@@ -214,7 +214,6 @@ const _datesToMonth = {
 }
 
 _rightPanelData.map(ev => {
-  console.log(ev);
   const eventBox = document.createElement('div');
   eventBox.classList.add('rpanel-boxitem');
 
