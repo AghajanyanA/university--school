@@ -22,7 +22,7 @@ const _graduatesData = [
 ]
 
 Array.from(cards.children).map((card, i) => {
-    card.children[0].src = _graduatesData[i].avatar
+    card.children[0].setAttribute('src', _graduatesData[i].avatar)
     card.children[1].innerHTML = _graduatesData[i].name
     card.children[2].innerHTML = _graduatesData[i].review
 })
