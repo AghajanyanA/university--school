@@ -368,7 +368,7 @@ body {
     align-items: center;
     padding: 25px;
     width: 150px;
-    height: 200px;
+    height: fit-content;
     margin-bottom: 7px;
 }
 
