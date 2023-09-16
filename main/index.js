@@ -128,12 +128,6 @@ const _leftPanelData = [
 ];
 
 
-const individualDateSubstradtion = daysToSubstract => {
-  const _today = new Date()
-  _today.setDate(_today.getDate() - daysToSubstract)
-  return _today
-}
-
 
 const _rightPanelData = [
   {
@@ -161,18 +155,28 @@ const _rightPanelData = [
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+
+
+
+function individualDateSubstradtion (daysToSubstract) {
+  const _today = new Date()
+  _today.setDate(_today.getDate() - daysToSubstract)
+  return _today
+}
+
+
 _leftPanelData.map(item => {
   const discoverBox = document.createElement('div');
   discoverBox.classList.add('lpanel-boxitem');
-
+  
   const image = document.createElement('img');
   image.classList.add('lpanel-boxitem-image');
   image.src = item.image;
-
+  
   const header = document.createElement('span');
   header.classList.add('sidepanels-header');
   header.innerHTML = item.headline;
-
+  
   const text = document.createElement('p');
   text.classList.add('lpanel-boxitem-text');
   text.innerHTML = item.subHeadline;
