@@ -1,6 +1,5 @@
 const cards = document.querySelector(".cards");
 const profContainer = document.querySelector(".prof-container");
-const footerYear = document.querySelector(".footer-current-year")
 
 const _graduatesData = [
     {
@@ -120,5 +119,3 @@ const gapsIncluded = 10 * (howManyCardsOfProfessorsThereShouldBe - 1)
 const newWithOfCardOfProfToFitTheContainer = (profContainer.clientWidth - gapsIncluded) / howManyCardsOfProfessorsThereShouldBe - profCardCalculatedPaddings;
 
 document.querySelectorAll('.prof-card').forEach(card => card.style.width = newWithOfCardOfProfToFitTheContainer + 'px')
-
-footerYear.innerHTML = (new Date().getFullYear())
