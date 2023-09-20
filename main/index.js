@@ -171,7 +171,8 @@ _leftPanelData.map(item => {
   
   const image = document.createElement('img');
   image.classList.add('lpanel-boxitem-image');
-  image.src = item.image;
+  image.setAttribute('src', item.image)
+  image.setAttribute('alt', item.headline)
   
   const header = document.createElement('span');
   header.classList.add('sidepanels-header');
