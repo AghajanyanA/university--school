@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;700&display=swap');
 
 * {
     /* user-select: none; */
     font-family: 'Roboto Slab', serif;
-    
 }
 
 *::selection {
@@ -15,6 +15,24 @@
 body {
     margin: 0;
 }
+
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color:#ff977a;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #FA4616;
+    border-radius: 5px; 
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #ff2002; 
+}
+
 .header {
     background-color: white;
     background-image: url("https://i.ibb.co/GVtBfqL/campanile-clock-tower-berkeley-Ekw-FCde-max-2880x1800-1-1024x683.jpg");
@@ -23,12 +41,13 @@ body {
     background-position: center;
 }
 .navbar {
-    background-color: rgb(13, 26, 83);
+    background-color: #FA4616;
     padding: 22px 22px 22px 3%;
     position: sticky;
     top: 0px;
     display: flex;
     transition: padding-left 1s ease-out;
+    z-index: 5;
 }
 .navTop {
     padding: 0 0 0 22px;
@@ -42,7 +61,7 @@ body {
     margin: 0;
 }
 .navbar a:hover {
-    background: rgb(56, 56, 150);
+    background: #ff6236;
 }
 
 .mainLinks {
@@ -50,7 +69,11 @@ body {
 }
 
 .mainLinks > a {
-    padding: 20px;
+    padding: 23px;
+}
+
+.currentPage {
+    background-color: #c03913;
 }
 
 .navHomeButton {
@@ -67,22 +90,130 @@ body {
     width: fit-content;
 }
 .main {
-    margin: 25px 0 0 0;
     position: static;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+}
+.admission-page-title {
+    margin: 25px 0 0 0;
+    justify-self: left;
+    text-transform: uppercase;
+    width: 100%;
+    align-items: center;
+    display: flex;
 }
 
-.lpanel {
-    width: 10%;
+.admission-page-title::before, .admission-page-title::after {
+    background-color: #FA4616;
+    content: "";
+    display: inline-block;
+    height: 3px;
+    position: relative;
+}
+.admission-page-title::before {
+    width: 7%;
+    margin: 0;
+    vertical-align: middle;
+}
+.admission-page-title::after {
+    width: 100%;
 }
 
-.cpanel {
-    width: 70%;
+.adp-title-ap {
+    font-weight: 700;
+    padding-left: 25px;
+    color: #FA4616;
 }
 
-.rpanel {
-    background: red;
-    width: 10%;
-    margin-bottom: 6vh;
+.adp-title-fm {
+    font-weight: 400;
+    padding: 0 25px;
+    color: #142883;
+}
+
+.adp-title-fm, .adp-title-ap {
+    font-family: 'Martian Mono', monospace;
+    font-size: 2em;
+    letter-spacing: 1.6px;
+}
+
+.main-container {
+    display: flex;
+}
+
+.side-container {
+    padding-left: 20%;
+}
+
+.left-navi {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+
+.left-nav-header {
+    font-family: 'Martian Mono', monospace;
+    font-size: 1.5em;
+    color: #142883;
+    text-transform: capitalize;
+}
+
+.left-nav-list {
+    border-left: #FA4616 solid 5px;
+    list-style-type: none;
+    margin: 0;
+    padding-left: 5%;
+}
+
+.nav-list-a {
+    text-decoration: none;
+    color: #142883;
+    font-family: 'Martian Mono', monospace;
+    font-size: 1em;
+    font-weight: 700;
+    letter-spacing: -1px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 15px 0;
+}
+
+.nav-list-li {
+    border-bottom: 2px solid #c7c7c7;
+}
+
+.nav-list-li:last-child {
+    border-bottom: none;
+}
+
+.nav-list-a:hover {
+    background-color: #d1ecf1;
+}
+
+.nav-list-sublist {
+    padding-left: 5%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.nav-list-sublist-li {
+    border-top: 2px solid #c7c7c7;
+}
+.nav-with-sub-un {
+    cursor: pointer;
+}
+.nav-with-sub-un::after {
+    content: '+';
+    float: right;
+    padding-right: 3%;
+}
+
+.nav-with-sub::after {
+    content: '-';
+}
+
+.expanded {
+    max-height: 500px;
+    transition: max-height 2s ease-out;
 }
