@@ -165,7 +165,7 @@ function individualDateSubstradtion (daysToSubstract) {
 }
 
 
-_leftPanelData.map(item => {
+_leftPanelData.forEach(item => {
   const discoverBox = document.createElement('div');
   discoverBox.classList.add('lpanel-boxitem');
   
@@ -218,7 +218,7 @@ const _datesToMonth = {
   11: "Dec"
 }
 
-_rightPanelData.map(ev => {
+_rightPanelData.forEach(ev => {
   const eventBox = document.createElement('div');
   eventBox.classList.add('rpanel-boxitem');
 
