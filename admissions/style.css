@@ -43,47 +43,25 @@ body::-webkit-scrollbar-thumb:hover {
 }
 .navbar {
     background-color: #FA4616;
-    padding: 22px 22px 22px 3%;
+    padding: 0 0 0 3%;
     position: sticky;
     top: 0px;
     display: flex;
-    transition: padding-left 1s ease-out;
-    z-index: 5;
-}
-.navTop {
-    padding: 0 0 0 22px;
-    padding-left: 30%;
-    transition: padding-left 1s ease-out;
 }
 .navbar a {
+    padding: 20px;
     color: white;
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
     margin: 0;
+    align-self: center;
 }
 .navbar a:hover {
     background: #ff6236;
 }
 
-.mainLinks {
-    align-self: center;
-}
-
-.mainLinks > a {
-    padding: 23px;
-}
-
 .currentPage {
     background-color: #c03913;
-}
-
-.navHomeButton {
-    display: none;
-    padding: 20px;
-}
-
-.navHomeButtonOn {
-    display: inline;
 }
 
 .logo {

@@ -26,7 +26,7 @@ body {
 }
 .navbar {
     background-color: rgb(13, 26, 83);
-    padding: 22px 22px 22px 3%;
+    padding: 0 0 0 3%;
     position: sticky;
     top: 0px;
     display: flex;
@@ -43,15 +43,6 @@ body {
 
 .navbar a:hover { 
     background: rgb(56, 56, 150);
-}
-
-.navHomeButton {
-    display: none;
-    padding: 20px;
-}
-
-.navHomeButtonOn {
-    display: inline;
 }
 
 .logo {
