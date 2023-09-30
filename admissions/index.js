@@ -1,5 +1,5 @@
 const navlist = document.querySelector('.left-nav-list')
-
+const summaries = document.querySelectorAll('.ma-sum')
 const navData = [
     {
         lt: 'How to Apply',
@@ -92,7 +92,6 @@ navData.forEach(item => {
 
     Object.values(item).forEach((value) => {
         if (typeof value === 'object') {
-            console.log(item);
             a.classList.add('nav-with-sub-un')
             const submenuDiv = document.createElement('div')
             submenuDiv.classList.add('nav-list-sublist')
@@ -122,3 +121,11 @@ expandable.addEventListener('click', e => {
     e.target.classList.toggle('nav-with-sub')
     isExpanded ? sublist.classList.add('expanded') : sublist.classList.remove('expanded')
 })
+
+summaries.forEach(element => {
+    element.addEventListener('click', e => {
+        e.currentTarget.classList.toggle('sum-collapsed')
+    })
+})
+
+ 

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
 
 * {
     /* user-select: none; */
@@ -203,17 +204,89 @@ body::-webkit-scrollbar-thumb:hover {
 .nav-with-sub-un {
     cursor: pointer;
 }
-.nav-with-sub-un::after {
+.nav-with-sub-un::after, .ma-sum::after {
     content: '+';
     float: right;
     padding-right: 3%;
 }
 
-.nav-with-sub::after {
+.nav-with-sub::after, .sum-collapsed::after {
     content: '-';
 }
 
 .expanded {
     max-height: 500px;
-    transition: max-height 2s ease-out;
+    transition: max-height 2s cubic-bezier(0, 0, 0.2, 0.5);
+}
+
+.main-content {
+    width: 60%;
+}
+
+.center-container {
+    padding-left: 5%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.center-container > h1 {
+    text-transform: uppercase;
+    font-size: 2.5em;
+    color: white;
+    background-color: #142883;
+    padding: 25px;
+    font-family: 'Young Serif', serif;
+    letter-spacing: 2px;
+}
+
+.center-container > h3 {
+    color: #142883;
+    background-color: #d1ecf1;
+    padding: 35px 45px;
+    border-radius: 22px;
+}
+
+.main-article {
+    margin-bottom: 15px;
+}
+
+.main-article > details > div {
+    color: #142883;
+    border: 2px solid #142883;
+    border-top: none;
+    border-radius: 0 0px 22px 22px;
+    margin: 0;
+    padding: 25px 35px;
+}
+
+.main-article > details > div > p {
+    font-family: 'Martian Mono', monospace;
+}
+
+.ma-sum {
+    cursor: pointer;
+    color: #142883;
+    border: 2px solid #142883;
+    font-family: 'Martian Mono', monospace;
+    font-weight: 700;
+    list-style: none;
+    padding: 25px 35px;
+}
+abbr {
+    text-decoration: none;
+    border-bottom: 1px dotted;
+}
+
+.ac-listing > li {
+    list-style: none;
+}
+
+.ac-listing > li::before {
+    content: "■";
+    color: #fa4616;
+    font-weight: bold;
+    display: inline-block; 
+    font-size: 30px;
+    margin-right: 15px;
 }
