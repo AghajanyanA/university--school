@@ -7,19 +7,6 @@ const slidesWrapper = document.querySelector('.slidesInWrapper');
 const lpanel = document.querySelector('.lpanelroot')
 const rpanel = document.querySelector('.rpanelroot')
 
-
-window.addEventListener('scroll', function() { // navbar sliding animation logic
-  const rect = navbar.getBoundingClientRect();
-
-  if (rect.top <= 0) {
-    navbar.classList.add('navTop');
-    homeButton.classList.add('navHomeButtonOn');
-  } else {
-    navbar.classList.remove('navTop');
-    homeButton.classList.remove('navHomeButtonOn');
-  };
-});
-
 window.onload = function() {
   pagesContainer.childNodes[1].classList.add('active');
 };
