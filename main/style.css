@@ -418,9 +418,23 @@ body::-webkit-scrollbar-thumb:hover {
     }
     .navbar a {
         padding: 15px;
+        font-size: 0.7em;
     }
     .mainLinks > a, .navHomeButton {
         padding: 20px 5px;
     }
-
+    .sliderContainer {
+        height: 250px;
+        margin: 0 1.5%;
+    }
+    .button > img {
+        width: 25px;
+        height: 25px;
+    }
+    .sliderHeadline {
+        font-size: 24px;    
+    }
+    .slide > div > p {
+        font-size: 16px;
+    }
 }
