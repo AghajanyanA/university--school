@@ -202,7 +202,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .center-container {
-    padding-left: 5%;
+    padding: 0 5%;
     display: flex;
     flex-direction: column;
 
@@ -227,6 +227,10 @@ body::-webkit-scrollbar-thumb:hover {
 
 .main-article {
     margin-bottom: 15px;
+}
+
+.main-article:last-child {
+    margin-bottom: 40px;
 }
 
 .main-article > details > div {
@@ -267,4 +271,33 @@ abbr {
     display: inline-block; 
     font-size: 30px;
     margin-right: 15px;
+}
+
+@media screen and (max-width: 762px){
+    .left-navi { /* TODO! This is temporary hidden, needs to be rendered otherwise */
+        display: none;
+    }
+    .main-content {
+        width: 100%;
+    }
+    .center-container > h1 {
+        font-size: 1.5em;
+    }
+    .center-container > h3 {
+        font-size: 1em;
+    }
+    .ma-sum {
+        padding: 15px 25px;
+        font-size: 0.8em;
+    }
+    .main-article > details > div > p {
+        font-size: 0.7em;
+    }
+    .footer-nav {
+        flex-direction: column;
+        margin: 0 10%;
+    }
+    .adp-title-ap, .adp-title-fm {
+        font-size: 1.5em;
+    }
 }
