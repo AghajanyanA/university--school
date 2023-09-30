@@ -83,3 +83,10 @@ footer {
     font-family: 'Andika', sans-serif;
     color: #909090;
 }
+
+@media screen and (max-width: 762px) {
+    .footer-nav {
+        flex-direction: column;
+        margin: 0 10%;
+    }
+}

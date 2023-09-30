@@ -394,7 +394,7 @@ body::-webkit-scrollbar-thumb:hover {
     background-color: #1900ff; 
 }
 
-@media (max-width: 722px) {
+@media (max-width: 762px) {
     .lpanel, .rpanel {
         display: none;
     }
@@ -415,6 +415,9 @@ body::-webkit-scrollbar-thumb:hover {
     .navTop {
         padding: 0;
         transition: none;
+    }
+    .navbar a {
+        padding: 15px;
     }
     .mainLinks > a, .navHomeButton {
         padding: 20px 5px;

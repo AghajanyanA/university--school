@@ -54,7 +54,6 @@ body::-webkit-scrollbar-thumb:hover {
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    align-self: center;
 }
 .navbar a:hover {
     background: #ff6236;
@@ -293,11 +292,10 @@ abbr {
     .main-article > details > div > p {
         font-size: 0.7em;
     }
-    .footer-nav {
-        flex-direction: column;
-        margin: 0 10%;
-    }
     .adp-title-ap, .adp-title-fm {
         font-size: 1.5em;
+    }
+    .navbar a {
+        padding: 15px;
     }
 }
