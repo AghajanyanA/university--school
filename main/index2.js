@@ -89,33 +89,43 @@ Array.from(cards.children).forEach((card, i) => {
     card.children[0].setAttribute('src', _graduatesData[i].avatar);
     card.children[1].innerHTML = _graduatesData[i].name;
     card.children[2].innerHTML = _graduatesData[i].review;
-})
+});
 
 _professorsData.forEach(prof => {
     const card = document.createElement('div');
     card.classList.add('prof-card');
-    const profName = document.createElement('span');
-    const profField = document.createElement('span');
-    const profExperience = document.createElement('span');
+    const profName = document.createElement('p');
+    const profField = document.createElement('p');
+    const profExperience = document.createElement('p');
     profName.classList.add('prof-name');
     profField.classList.add('prof-field');
-    profExperience.classList.add('prof-experience')
-    profName.innerHTML = prof.name
-    profField.innerHTML = prof.field
-    profExperience.innerHTML = `${prof.experience} years of experience`
-    card.append(profName)
-    card.append(profField)
-    card.append(profExperience)
+    profExperience.classList.add('prof-experience');
+    profName.innerHTML = prof.name;
+    profField.innerHTML = prof.field;
+    profExperience.innerHTML = `${prof.experience} years of experience`;
+    card.append(profName);
+    card.append(profField);
+    card.append(profExperience);
     profContainer.append(card);
 })
 
-const profCard = document.querySelector('.prof-card')
-const profCardComputedStyles = getComputedStyle(profCard)
-const profCardCalculatedPaddings = parseInt(profCardComputedStyles.paddingLeft) + parseInt(profCardComputedStyles.paddingRight)
+const profCard = document.querySelector('.prof-card');
+const profCardComputedStyles = getComputedStyle(profCard);
+const profCardCalculatedPaddings = parseInt(profCardComputedStyles.paddingLeft) + parseInt(profCardComputedStyles.paddingRight);
 
+window.addEventListener("load", () => {
+    const howManyCardsOfProfessorsThereShouldBe = Math.floor((profContainer.clientWidth - (Math.round(profContainer.clientWidth / profCard.clientWidth) - 1)) / profCard.clientWidth);
+    const gapsIncluded = 10 * (howManyCardsOfProfessorsThereShouldBe - 1);
+    const newWithOfCardOfProfToFitTheContainer = (profContainer.clientWidth - gapsIncluded) / howManyCardsOfProfessorsThereShouldBe - profCardCalculatedPaddings;
+    console.log(newWithOfCardOfProfToFitTheContainer);
 
-const howManyCardsOfProfessorsThereShouldBe = Math.floor((profContainer.clientWidth - (Math.round(profContainer.clientWidth / profCard.clientWidth) - 1)) / profCard.clientWidth)
-const gapsIncluded = 10 * (howManyCardsOfProfessorsThereShouldBe - 1)
-const newWithOfCardOfProfToFitTheContainer = (profContainer.clientWidth - gapsIncluded) / howManyCardsOfProfessorsThereShouldBe - profCardCalculatedPaddings;
+    document.querySelectorAll('.prof-card').forEach(card => card.style.width = newWithOfCardOfProfToFitTheContainer + 'px');
+});
 
-document.querySelectorAll('.prof-card').forEach(card => card.style.width = newWithOfCardOfProfToFitTheContainer + 'px')
+window.addEventListener("resize", () => {
+    const howManyCardsOfProfessorsThereShouldBe = Math.floor((profContainer.clientWidth - (Math.round(profContainer.clientWidth / profCard.clientWidth) - 1)) / profCard.clientWidth);
+    const gapsIncluded = 10 * (howManyCardsOfProfessorsThereShouldBe - 1);
+    const newWithOfCardOfProfToFitTheContainer = (profContainer.clientWidth - gapsIncluded) / howManyCardsOfProfessorsThereShouldBe - profCardCalculatedPaddings;;
+
+    document.querySelectorAll('.prof-card').forEach(card => card.style.width = newWithOfCardOfProfToFitTheContainer + 'px');
+});
