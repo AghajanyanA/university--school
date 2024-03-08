@@ -24,11 +24,11 @@ body {
 }
 .navbar {
     background-color: rgb(13, 26, 83);
-    padding: 22px 22px 22px 3%;
+    padding: 0 0 0 3%;
     position: sticky;
     top: 0px;
     display: flex;
-    transition: padding-left 1s ease-out;
+    z-index: 7;
 }
 .navTop {
     padding: 0 0 0 22px;
@@ -40,6 +40,8 @@ body {
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
     margin: 0;
+    padding: 20px;
+    align-self: center;
 }
 .navbar a:hover {
     background: rgb(56, 56, 150);
