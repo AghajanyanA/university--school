@@ -23,7 +23,7 @@ body {
     background-position: center;
 }
 .navbar {
-    background-color: rgb(13, 26, 83);
+    background-color: #28527A;
     padding: 22px 22px 22px 3%;
     position: sticky;
     top: 0px;
@@ -42,7 +42,7 @@ body {
     margin: 0;
 }
 .navbar a:hover {
-    background: rgb(56, 56, 150);
+    background: #8AC4D0;
 }
 
 .mainLinks {
