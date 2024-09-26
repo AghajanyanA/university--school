@@ -118,8 +118,9 @@ footer {
 
 .mainContainer {
     display: flex;
-    width: 80%;
-    align-self: center;
+    flex-direction: column;
+    /* width: 80%; */
+    align-items: center;
     justify-content: center;
     padding: 50px 0 0 0;
 }
@@ -135,10 +136,12 @@ footer {
     font-weight: 400;
     font-style: normal;
     font-size: 22px;
+    margin-bottom: 15px;
 }
 
 .goals > h1 {
     margin: 0 0 10px 0;
+    text-align: center;
 }
 
 .goals > p {
