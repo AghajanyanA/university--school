@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
 
 * {
     /* user-select: none; */
@@ -15,6 +16,11 @@
 body {
     margin: 0;
 }
+
+footer {
+    background-color: #28527A;
+}
+
 .header {
     background-color: white;
     background-image: url("https://i.ibb.co/GVtBfqL/campanile-clock-tower-berkeley-Ekw-FCde-max-2880x1800-1-1024x683.jpg");
@@ -22,19 +28,22 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 }
+
 .navbar {
-    background-color: rgb(13, 26, 83);
+    background-color: #28527A;
     padding: 0 0 0 3%;
     position: sticky;
     top: 0px;
     display: flex;
     z-index: 7;
 }
+
 .navTop {
     padding: 0 0 0 22px;
     padding-left: 30%;
     transition: padding-left 1s ease-out;
 }
+
 .navbar a {
     color: white;
     text-decoration: none;
@@ -43,6 +52,7 @@ body {
     padding: 20px;
     align-self: center;
 }
+
 .navbar a:hover {
     background: #8AC4D0;
 }
@@ -68,23 +78,83 @@ body {
     margin-left: 3%;
     width: fit-content;
 }
+
 .main {
-    margin: 25px 0 0 0;
     position: static;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    width: 100%;
+    background-color: #f7f7f8;
 }
 
-.lpanel {
-    width: 10%;
+.main > section {
+    color: white;
+    font-size: 22px;
+    background-image: url('https://images.unsplash.com/photo-1582560474992-385ebb9b29a4?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'), linear-gradient(to right, #000000, #ff0000);
+    background-position: center;
+    height: 400px;
+}
+.labmg { 
+    background-color: #000000a9;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    background-clip: border-box;
 }
 
-.cpanel {
-    width: 70%;
+.lab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2%;
 }
 
-.rpanel {
-    background: red;
-    width: 10%;
-    margin-bottom: 6vh;
+.lab > h2 {
+    letter-spacing: 2px;
+}
+
+.mainContainer {
+    display: flex;
+    width: 80%;
+    align-self: center;
+    justify-content: center;
+    padding: 50px 0 0 0;
+}
+
+.goals {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    font-family: "Mulish", sans-serif !important;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 22px;
+}
+
+.goals > h1 {
+    margin: 0 0 10px 0;
+}
+
+.goals > p {
+    text-align: center; 
+    word-spacing: 2px;
+    font-size: 16px;
+    margin: 0 0 15px 0;
+}
+
+.redline {
+    margin: 10px 0;
+    width: 150px;
+    height: 13px;
+    background-color: #ec0836;
+}
+
+.link-section-header {
+    color: #F4D160;
 }
